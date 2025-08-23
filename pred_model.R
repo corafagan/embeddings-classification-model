@@ -18,8 +18,6 @@
 # Shape: n rows x at least 51 columns (group + V1:V50).
 # ---------------------------------------------------------------
 
-# This code takes document-level embeddings (using GloVe) at 50 dimensions and classifies them using LASSO Regression 
-
 # Load packages
 library(dplyr)
 library(caret)
