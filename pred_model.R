@@ -2,6 +2,22 @@
 # Author: Cora Fagan
 # Date: August 2025
 
+# ---------------------------------------------------------------
+# Input data requirements
+# ---------------------------------------------------------------
+# The script expects a data.frame/tibble named `combined_embeddings`
+# with one row per document and:
+#   - group: binary label with exact strings "control" and "treatment".
+#            Order matters: levels = c("control","treatment");
+#            "treatment" is treated as the positive class.
+#   - V1...V50: numeric columns containing 50-dim document embeddings
+#               (e.g., GloVe). Must be numeric; recommended no NAs.
+# Other columns (e.g., doc_id) are allowed and ignored as long as
+# they do not start with "V".
+#
+# Shape: n rows x at least 51 columns (group + V1:V50).
+# ---------------------------------------------------------------
+
 # This code takes document-level embeddings (using GloVe) at 50 dimensions and classifies them using LASSO Regression 
 
 # Load packages
